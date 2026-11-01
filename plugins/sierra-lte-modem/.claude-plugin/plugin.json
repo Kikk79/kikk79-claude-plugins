@@ -1,0 +1,14 @@
+{
+  "name": "sierra-lte-modem",
+  "displayName": "Sierra LTE Modem",
+  "version": "1.0.0",
+  "description": "Einrichtung, Diagnose und FCC-Entsperrung von Sierra Wireless EM7455/MC7455 LTE-Modems unter Windows 11 und Linux (MBIM, ModemManager, AT-Befehle, Telekom-APN).",
+  "author": {
+    "name": "Klaus Lettenbichler",
+    "url": "https://github.com/Kikk79"
+  },
+  "homepage": "https://github.com/Kikk79/kikk79-claude-plugins/tree/main/plugins/sierra-lte-modem",
+  "repository": "https://github.com/Kikk79/kikk79-claude-plugins",
+  "license": "GPL-3.0-only",
+  "keywords": ["lte", "4g", "wwan", "modem", "sierra-wireless", "em7455", "mc7455", "mbim", "modemmanager", "telekom", "fcc-unlock"]
+}

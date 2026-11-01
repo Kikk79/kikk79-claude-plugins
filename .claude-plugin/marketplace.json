@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "kikk79-plugins",
+  "description": "Claude-Code-Plugins von Kikk79: Hardware-Einrichtung und Werkzeuge rund um Windows und Linux.",
+  "owner": {
+    "name": "Klaus Lettenbichler",
+    "url": "https://github.com/Kikk79"
+  },
+  "plugins": [
+    {
+      "name": "sierra-lte-modem",
+      "source": "./plugins/sierra-lte-modem",
+      "description": "Sierra Wireless EM7455/MC7455 LTE-Modem unter Windows 11 und Linux einrichten, diagnostizieren und FCC-entsperren.",
+      "category": "productivity",
+      "keywords": ["lte", "modem", "wwan", "em7455", "mbim", "modemmanager"]
+    }
+  ]
+}
