@@ -1,6 +1,6 @@
 ---
 name: em7455-lte-modem
-description: Einrichtung, Diagnose und Entsperrung eines Sierra Wireless EM7455 (auch MC7455, EM7430) LTE-Modems im USB-Gehäuse oder M.2-Slot unter Windows 11 und Linux, mit Telekom-SIM oder anderem Anbieter. Nutze diesen Skill immer, wenn ein 4G/LTE/WWAN/Mobilfunk-Modem von Sierra Wireless eingerichtet werden soll, keine Verbindung bekommt, 0 % Signal zeigt, "Software-Funkstatus Aus" meldet, im Low Power Mode hängt (BIOS:1, FCC-Auth), als USB-ID 1199:9078 im Bootmodus feststeckt, nur unter einem Betriebssystem läuft, oder wenn nach APN, MBIM vs. QMI, AT-Befehlen (AT!PCINFO, AT!USBCOMP, AT!OPENLOCK), ModemManager, qmicli, netsh mbn oder Lenovo-Whitelist gefragt wird, auch ohne dass der Nutzer das Wort "Skill" oder die Modellnummer nennt.
+description: Einrichtung, Diagnose und Entsperrung eines Sierra Wireless EM7455 (auch MC7455, EM7430) LTE-Modems im USB-Gehäuse oder M.2-Slot unter Windows 11 und Linux, mit Telekom-SIM oder anderem Anbieter. Nutze diesen Skill immer, wenn ein 4G/LTE/WWAN/Mobilfunk-Modem von Sierra Wireless eingerichtet werden soll, keine Verbindung bekommt, 0 % Signal zeigt, "Software-Funkstatus Aus" meldet, im Low Power Mode hängt (BIOS:1, FCC-Auth), als USB-ID 1199:9078 im Bootmodus feststeckt, nur unter einem Betriebssystem läuft, zu langsam ist oder mehr Leistung bringen soll (Band wechseln, Bandsperre, Carrier-Aggregation, Durchsatz messen, Antennen), oder wenn nach APN, MBIM vs. QMI, AT-Befehlen (AT!PCINFO, AT!USBCOMP, AT!OPENLOCK, AT!BAND), ModemManager, qmicli, netsh mbn oder Lenovo-Whitelist gefragt wird, auch ohne dass der Nutzer das Wort "Skill" oder die Modellnummer nennt.
 ---
 
 # Sierra EM7455 LTE-Modem unter Windows und Linux
@@ -94,14 +94,17 @@ bestätigen; in Claude Code geht das mit dem `!`-Präfix vor dem Befehl.
 
 - Keine Firmware auf Windows flashen. Sierra liefert dafür nur noch Pakete über OEMs; Linux mit
   `qmi-firmware-update` ist der zuverlässige Weg, siehe `references/linux.md`.
-- Keine Band-Sperren oder LTE-only-Einstellungen setzen, solange die Grundeinrichtung nicht steht.
-  `AT!SELRAT=06` (nur LTE) ist erst sinnvoll, wenn das Modul stabil verbindet.
+- Keine Band-Sperren setzen, solange die Grundeinrichtung nicht steht. Danach lohnt es sich fast
+  immer: `references/leistung.md` beschreibt die Band-Messung, die Sperre und die Durchsatzmessung.
+  Beim erprobten Modul brachte der Wechsel von Band 8 auf Band 3 + 20 das Fünffache.
 
 ## Referenzen
 
 - `references/windows.md`: Windows-11-Befehle für PnP, netsh mbn, AT-Port per PowerShell, Aufräumen verwaister Adapter.
 - `references/linux.md`: ModemManager, qmicli, NetworkManager, Firmware-Flash im QDL-Modus, FCC-Unlock pro Boot.
 - `references/at-befehle.md`: Alle genutzten AT-Befehle mit erwarteten Antworten, FCC-Auth abschalten und wieder einschalten, Identität zurücksetzen.
+- `references/leistung.md`: Wenn es läuft, aber langsam ist. Bänder einzeln testen, auf das beste Band
+  mit Carrier-Aggregation festlegen, Durchsatz an die Mobilfunk-Schnittstelle gebunden messen, Antennen.
 - `scripts/fcc-unlock.ps1`, `scripts/fcc-unlock.py`, `scripts/keygen_wrap.py`: Freischaltsequenz.
 - `scripts/sierrakeygen.py`: Challenge-Response-Generator von B. Kerler, GPLv3 (`scripts/NOTICE.md`,
   `scripts/LICENSE.sierrakeygen.txt`). Aufruf immer mit `--keygen` auf diese Datei.

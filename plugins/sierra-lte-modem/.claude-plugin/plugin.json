@@ -1,7 +1,7 @@
 {
   "name": "sierra-lte-modem",
   "displayName": "Sierra LTE Modem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Einrichtung, Diagnose und FCC-Entsperrung von Sierra Wireless EM7455/MC7455 LTE-Modems unter Windows 11 und Linux (MBIM, ModemManager, AT-Befehle, Telekom-APN).",
   "author": {
     "name": "Klaus Lettenbichler",

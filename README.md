@@ -25,6 +25,7 @@ Inhalt:
 - `references/windows.md`: PnP, `netsh mbn`, APN-Profil, AT-Port aus PowerShell.
 - `references/linux.md`: ModemManager, qmicli, NetworkManager, Firmware-Flash im QDL-Modus.
 - `references/at-befehle.md`: alle AT-Befehle mit erwarteten Antworten.
+- `references/leistung.md`: Band-Messung, Bandsperre mit Carrier-Aggregation, Durchsatzmessung, Antennen.
 - `scripts/`: Freischaltsequenz für Windows (PowerShell) und beide Systeme (Python), plus
   `sierrakeygen.py` von B. Kerler (GPLv3, siehe `scripts/NOTICE.md`).
 
